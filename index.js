@@ -13,17 +13,17 @@ const args = yargs
     .example('node $0 --entry ./path --dist ./path -D')
     .option('entry', {
         alias: 'e',
-        describe: 'Указывает путь к читаемой директории',
+        describe: 'Configuring entry path',
         demandOption: true
     })
     .option('dist', {
         alias: 'd',
-        describe: 'Указывает путь к создаваемой директории',
+        describe: 'Configuring output path',
         default: './output'
     })
     .option('delete', {
         alias: 'D',
-        describe: 'Удаляем исходную папку?',
+        describe: 'Flag to delete input folder',
         default: false,
         boolean: true
     })
