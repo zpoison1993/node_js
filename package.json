@@ -1,0 +1,17 @@
+{
+  "name": "hw1",
+  "version": "1.0.0",
+  "description": "The first homework on course",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "hw1"
+  ],
+  "author": "Vladimir Golub",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^17.2.1"
+  }
+}
