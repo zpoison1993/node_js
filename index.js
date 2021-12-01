@@ -1,6 +1,6 @@
 const yargs = require('yargs')
 const path = require('path')
-const { readdir, lstat, copyFile, mkdir } = require('fs')
+const { readdir, lstat, mkdir } = require('fs')
 const copyFileUtil = require('./helpers')
 const { errorCode } = require('./constants')
 
@@ -41,7 +41,7 @@ function copyCurrentFile (input, output, isEmptyFolder = false) {
     const fileNameWithExtension = path.basename(input)
     const extension = path.extname(input)
     const fileName = path.basename(fileNameWithExtension, extension)
-    const destinationFolder = path.resolve(output,fileName[0])
+    const destinationFolder = path.resolve(output,fileName[0].toUpperCase())
     lstat(destinationFolder, (err, stats) => {
         if (err) {
             mkdir(destinationFolder, (err) => {
@@ -67,7 +67,7 @@ function reader(src) {
         if (err) {
             throw err
         }
-        lstat(config.dist, (err, stats) => {
+        lstat(config.dist, (err) => {
             if (err) {
                 mkdir(config.dist, (err) => {
                     if (err) throw new Error(`something went wrong while ${config.dist} directory creating`)
