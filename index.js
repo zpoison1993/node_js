@@ -41,7 +41,7 @@ function copyCurrentFile (input, output, isEmptyFolder = false) {
     const fileNameWithExtension = path.basename(input)
     const extension = path.extname(input)
     const fileName = path.basename(fileNameWithExtension, extension)
-    const destinationFolder = path.resolve(output,fileName[0])
+    const destinationFolder = path.resolve(output,fileName[0].toUpperCase())
     lstat(destinationFolder, (err, stats) => {
         if (err) {
             mkdir(destinationFolder, (err) => {
