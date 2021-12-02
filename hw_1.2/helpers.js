@@ -1,5 +1,8 @@
 const getDateInUTC = () => new Date().toUTCString()
 
+// transformTimeToMs converts semantic seconds in process.env variables into numbers in milliseconds
+const transformTimeToMs = (timeValueInSeconds) => Number(timeValueInSeconds) * 1000
+
 const setTimeoutAsync = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 let intervalId = 0
@@ -20,5 +23,6 @@ const handleActionsAfterTimeout =
     )
 
 module.exports.getDateInUTC = getDateInUTC
+module.exports.transformTimeToMs = transformTimeToMs
 module.exports.setIntervalAsync = setIntervalAsync
 module.exports.handleActionsAfterTimeout = handleActionsAfterTimeout
