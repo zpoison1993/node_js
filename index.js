@@ -1,6 +1,6 @@
 const yargs = require('yargs')
 const path = require('path')
-const { readdir, lstat, copyFile, mkdir } = require('fs')
+const { readdir, lstat, mkdir } = require('fs')
 const copyFileUtil = require('./helpers')
 const { errorCode } = require('./constants')
 
@@ -67,7 +67,7 @@ function reader(src) {
         if (err) {
             throw err
         }
-        lstat(config.dist, (err, stats) => {
+        lstat(config.dist, (err) => {
             if (err) {
                 mkdir(config.dist, (err) => {
                     if (err) throw new Error(`something went wrong while ${config.dist} directory creating`)
