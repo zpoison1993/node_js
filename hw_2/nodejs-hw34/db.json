@@ -1,0 +1,72 @@
+{
+  "skills": [
+    {
+      "number": "10",
+      "text": "Возраст начала занятий на скрипке"
+    },
+    {
+      "number": "70",
+      "text": "Концертов отыграл"
+    },
+    {
+      "number": "25",
+      "text": "Максимальное число городов в туре"
+    },
+    {
+      "number": "1",
+      "text": "Лет на сцене в качестве скрипача"
+    }
+  ],
+  "products": [
+    {
+      "name": "Linkin Park - Meteora (2003)",
+      "price": "450",
+      "src": "\\upload\\Meteora.jpg"
+    },
+    {
+      "name": "Bring Me The Horizon - That's The Spirit (2015)",
+      "price": "465",
+      "src": "\\upload\\Thats_the_spirit.jpg"
+    },
+    {
+      "name": "Architects - For Those That Wish to Exist (2020)",
+      "price": "510",
+      "src": "\\upload\\FTTWTE.jpg"
+    },
+    {
+      "name": "Asking Alexandria - Asking Alexandria (2018)",
+      "price": "495",
+      "src": "\\upload\\AA.jpg"
+    },
+    {
+      "name": "Slayer - South Of Heaven (1989)",
+      "price": "395",
+      "src": "\\upload\\South_of_heaven.jpg"
+    },
+    {
+      "name": "Northlane - Al1ien (2019)",
+      "price": "520",
+      "src": "\\upload\\Al1en.jpg"
+    },
+    {
+      "name": "Emarosa - Versus (2014)",
+      "price": "410",
+      "src": "\\upload\\Versus.jpg"
+    },
+    {
+      "name": "Five Finger Death Punch - The Way Of The Fist (2007)",
+      "price": "370",
+      "src": "\\upload\\The_way_of_the_fist.jpg"
+    },
+    {
+      "name": "Wildways - Нью Скул (2019)",
+      "price": "430",
+      "src": "\\upload\\New_scool.jpg"
+    },
+    {
+      "name": "Limp Bizkit - Chocolate Starfish And The Hot Dog Flavored Water (2000)",
+      "price": "99",
+      "src": "\\upload\\LB.jpg"
+    }
+  ]
+}
