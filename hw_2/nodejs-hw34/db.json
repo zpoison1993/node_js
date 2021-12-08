@@ -1,5 +1,5 @@
 {
-  "admin" : {
+  "admin": {
     "email": "node@uva.ru",
     "password": "$2a$10$t/wdTAzn3D/o3xnF/bFzBOjkv4fxqkA8Jc/hZHs7lAAxBXCyjHVIa"
   },
@@ -8,6 +8,51 @@
       "email": "zpoison1993@gmail.com",
       "name": "Vladimir Golub",
       "message": "Helllllo"
+    },
+    {
+      "email": "bd@mail.com",
+      "name": "Brad",
+      "message": "hey, my album!"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "4545"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "454545"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "333"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "Тест"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "Тест 2"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "wewe",
+      "message": "rertetertert"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "vvvvvvvvvvvvvvvvvvv"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "test",
+      "message": "gfth"
     }
   ],
   "skills": [

@@ -34,7 +34,8 @@ module.exports.loginUser = (req,res, next) => {
             return next(err)
         } else if (!isMatch) {
             console.log('Password doesn\'t match')
-            res.redirect('/login')
+            req.flash('msglogin', 'Wrong password')
+            res.render('pages/login', { msglogin: req.flash('msglogin') })
         } else {
             console.log('It is a match!')
             res.redirect('/admin')
@@ -50,11 +51,14 @@ module.exports.postMail = (req, res, next) => {
         message,
     } = body
     if (!name || !email || !message) {
-        return next('Не все поля заполнены');
+        // return next('Не все поля заполнены');
+        req.flash('msgemail', 'Не все поля заполнены')
+        return res.redirect('/')
     }
     db.get('messages')
         .push({ email, name, message})
         .write()
+    req.flash('msgemail', 'Письмо доставлено')
     res.redirect('/')
 }
 

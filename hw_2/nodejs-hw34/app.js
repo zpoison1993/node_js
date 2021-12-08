@@ -1,5 +1,7 @@
 const createError = require('http-errors')
 const express = require('express')
+const session = require('express-session')
+const flash = require('connect-flash')
 const path = require('path')
 const logger = require('morgan')
 
@@ -19,7 +21,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(session({secret: '{secret}', name: 'session_id', saveUninitialized: true, resave: true}));
+app.use(flash())
 app.use('/', mainRouter)
 
 // catch 404 and forward to error handler

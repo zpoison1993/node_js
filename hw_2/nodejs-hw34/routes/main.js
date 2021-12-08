@@ -6,8 +6,9 @@ const controller = require('../controllers')
 router.get('/', (req, res, next) => {
   const products = controller.getProducts()
   const skills = controller.getSkills()
-  console.log('products', products)
-  res.render('pages/index', { title: 'Main page', products, skills })
+  const msgemail = req.flash('msgemail')[0]
+  console.log('TESST',msgemail)
+  res.render('pages/index', { title: 'Main page', products, skills, msgemail })
 })
 
 router.post('/', (req, res, next) => {
