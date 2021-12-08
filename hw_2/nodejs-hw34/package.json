@@ -23,6 +23,7 @@
     "prettier": "^2.2.0"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "formidable": "^2.0.1",

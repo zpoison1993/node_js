@@ -1,20 +1,74 @@
 const formidable = require('formidable')
+const { genSalt, hash, compare } = require('bcryptjs')
 const fs = require('fs')
 const path = require('path')
 const db = require('../models/db')
+
+module.exports.signUp = (req,res,next) => {
+  const password = 'NodeJsTestPassword'
+  const saltRounds = 10
+
+  genSalt(saltRounds, (err, salt) => {
+      if (err) {
+          throw err
+      } else {
+          hash(password, salt, (err, hash) => {
+              if (err) {
+                  throw err
+              } else {
+                  console.log('password', hash)
+              }
+          })
+      }
+  })
+}
+
+module.exports.loginUser = (req,res, next) => {
+    const {
+        email,
+        password
+    } = req.body
+    const hash = db.get('admin.password').value()
+    compare(password, hash, (err, isMatch) => {
+        if (err) {
+            return next(err)
+        } else if (!isMatch) {
+            console.log('Password doesn\'t match')
+            res.redirect('/login')
+        } else {
+            console.log('It is a match!')
+            res.redirect('/admin')
+        }
+    })
+}
+
+module.exports.postMail = (req, res, next) => {
+    const { body } = req
+    const {
+        name,
+        email,
+        message,
+    } = body
+    if (!name || !email || !message) {
+        return next('Не все поля заполнены');
+    }
+    db.get('messages')
+        .push({ email, name, message})
+        .write()
+    res.redirect('/')
+}
 
 module.exports.getSkills = () => {
     return db.get('skills').value()
 }
 
 module.exports.postSkills = (req, res, next) => {
-    console.log('req', req)
     const { body } = req
-    console.log('body', body)
     const inputValues = Object.values(body)
     const inputKeys = Object.keys(body)
     if (inputValues.some(inputValue => !inputValue)) {
-        throw new Error('Не все данные введены')
+        const err = new Error('Не все данные введены')
+        return next(err)
     }
     for(const inputKey of inputKeys) {
         db.get('skills')
@@ -48,11 +102,8 @@ module.exports.postProducts = (req, res, next) => {
             fs.unlink(files.photo.filepath, (err) => {
                 console.log('Something went wrong while deleting temporary file')
             })
-            // return res.redirect(`/?msg=${status}`)
             return res.send(`/?msg=${status}`)
         }
-        console.log('UPLOAD', upload)
-        console.log('files', files.photo.originalFilename)
         const fileName = path.join(upload, files.photo.originalFilename)
         fs.rename(files.photo.filepath, fileName, async (err) => {
             if (err) {

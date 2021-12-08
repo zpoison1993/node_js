@@ -1,4 +1,15 @@
 {
+  "admin" : {
+    "email": "node@uva.ru",
+    "password": "$2a$10$t/wdTAzn3D/o3xnF/bFzBOjkv4fxqkA8Jc/hZHs7lAAxBXCyjHVIa"
+  },
+  "messages": [
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Vladimir Golub",
+      "message": "Helllllo"
+    }
+  ],
   "skills": [
     {
       "number": "10",
