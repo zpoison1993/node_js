@@ -29,16 +29,19 @@ module.exports.loginUser = (req,res, next) => {
         password
     } = req.body
     const hash = db.get('admin.password').value()
+    const emailValid = db.get('admin.email').value()
     compare(password, hash, (err, isMatch) => {
         if (err) {
             return next(err)
         } else if (!isMatch) {
-            console.log('Password doesn\'t match')
-            req.flash('msglogin', 'Wrong password')
-            res.render('pages/login', { msglogin: req.flash('msglogin') })
+            req.flash('msglogin', 'Неверный пароль')
+            return res.render('pages/login', { msglogin: req.flash('msglogin') })
         } else {
-            console.log('It is a match!')
-            res.redirect('/admin')
+            if (email !== emailValid) {
+                req.flash('msglogin', 'Неверный email')
+                return res.render('pages/login', { msglogin: req.flash('msglogin') })
+            }
+            return res.redirect('/admin')
         }
     })
 }
@@ -71,8 +74,10 @@ module.exports.postSkills = (req, res, next) => {
     const inputValues = Object.values(body)
     const inputKeys = Object.keys(body)
     if (inputValues.some(inputValue => !inputValue)) {
-        const err = new Error('Не все данные введены')
-        return next(err)
+        // const err = new Error('Не все данные введены')
+        // return next(err)
+        req.flash('msgskill', 'Не все данные введены')
+        return res.redirect('/admin')
     }
     for(const inputKey of inputKeys) {
         db.get('skills')
@@ -80,8 +85,8 @@ module.exports.postSkills = (req, res, next) => {
             .assign({ number: body[inputKey] })
             .write()
     }
-    console.log('db state', db.getState())
-    res.redirect('/admin')
+    req.flash('msgskill', 'Данные успешно обновлены')
+    return res.redirect('/admin')
 }
 
 module.exports.getProducts = () => {
@@ -99,14 +104,16 @@ module.exports.postProducts = (req, res, next) => {
     form.uploadDir = path.join(process.cwd(), upload)
     form.parse(req, (err, fields, files) => {
         if (err) {
-            return next(err)
+            req.flash('msgfile', err)
+            return res.redirect('/admin')
         }
         const { status, error } = validate(fields,files)
         if (error) {
             fs.unlink(files.photo.filepath, (err) => {
                 console.log('Something went wrong while deleting temporary file')
             })
-            return res.send(`/?msg=${status}`)
+            req.flash('msgfile', status)
+            return res.redirect('/admin')
         }
         const fileName = path.join(upload, files.photo.originalFilename)
         fs.rename(files.photo.filepath, fileName, async (err) => {
@@ -117,21 +124,21 @@ module.exports.postProducts = (req, res, next) => {
             db.get('products')
                 .push({ name: fields.name, price: fields.price, src: dir})
                 .write()
-            console.log('db state', db.getState())
-            res.send(db.getState())
+            req.flash('msgfile', 'Продукт успешно добавлен')
+            return res.redirect('/admin')
         })
     })
 }
 
 const validate = (fields, files) => {
     if (files.photo.name === '' || files.photo.size === 0) {
-        return { status: 'Image failed to load', error: true }
+        return { status: 'Не удалось добавить файл', error: true }
     }
     if (!fields.name) {
-        return { status: 'Description not found', error: true }
+        return { status: 'Описание не заполнено', error: true }
     }
     if (!fields.price) {
-        return { status: 'Price not found', error: true }
+        return { status: 'Цена не заполнена', error: true }
     }
     return { status: 'Ok', error: false }
 }

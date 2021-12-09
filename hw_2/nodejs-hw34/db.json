@@ -53,11 +53,36 @@
       "email": "zpoison1993@gmail.com",
       "name": "test",
       "message": "gfth"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "KOL"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "test",
+      "message": "rtyrtrtytr"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "222525"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "test",
+      "message": "22525254444"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "55545454"
     }
   ],
   "skills": [
     {
-      "number": "10",
+      "number": "9",
       "text": "Возраст начала занятий на скрипке"
     },
     {
@@ -69,7 +94,7 @@
       "text": "Максимальное число городов в туре"
     },
     {
-      "number": "1",
+      "number": "2",
       "text": "Лет на сцене в качестве скрипача"
     }
   ],
@@ -123,6 +148,16 @@
       "name": "Limp Bizkit - Chocolate Starfish And The Hot Dog Flavored Water (2000)",
       "price": "99",
       "src": "\\upload\\LB.jpg"
+    },
+    {
+      "name": "Papa Roach - Infest (2000)",
+      "price": "345",
+      "src": "\\upload\\Infest.jpg"
+    },
+    {
+      "name": "Polaris - The Death of Me (2020)",
+      "price": "545",
+      "src": "\\upload\\Polaris.jpg"
     }
   ]
 }
