@@ -1,0 +1,163 @@
+{
+  "admin": {
+    "email": "node@uva.ru",
+    "password": "$2a$10$t/wdTAzn3D/o3xnF/bFzBOjkv4fxqkA8Jc/hZHs7lAAxBXCyjHVIa"
+  },
+  "messages": [
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Vladimir Golub",
+      "message": "Helllllo"
+    },
+    {
+      "email": "bd@mail.com",
+      "name": "Brad",
+      "message": "hey, my album!"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "4545"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "454545"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "333"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "Тест"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "Тест 2"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "wewe",
+      "message": "rertetertert"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "vvvvvvvvvvvvvvvvvvv"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "test",
+      "message": "gfth"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "KOL"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "test",
+      "message": "rtyrtrtytr"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "222525"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "test",
+      "message": "22525254444"
+    },
+    {
+      "email": "zpoison1993@gmail.com",
+      "name": "Владимир",
+      "message": "55545454"
+    }
+  ],
+  "skills": [
+    {
+      "number": "9",
+      "text": "Возраст начала занятий на скрипке"
+    },
+    {
+      "number": "70",
+      "text": "Концертов отыграл"
+    },
+    {
+      "number": "25",
+      "text": "Максимальное число городов в туре"
+    },
+    {
+      "number": "2",
+      "text": "Лет на сцене в качестве скрипача"
+    }
+  ],
+  "products": [
+    {
+      "name": "Linkin Park - Meteora (2003)",
+      "price": "450",
+      "src": "\\upload\\Meteora.jpg"
+    },
+    {
+      "name": "Bring Me The Horizon - That's The Spirit (2015)",
+      "price": "465",
+      "src": "\\upload\\Thats_the_spirit.jpg"
+    },
+    {
+      "name": "Architects - For Those That Wish to Exist (2020)",
+      "price": "510",
+      "src": "\\upload\\FTTWTE.jpg"
+    },
+    {
+      "name": "Asking Alexandria - Asking Alexandria (2018)",
+      "price": "495",
+      "src": "\\upload\\AA.jpg"
+    },
+    {
+      "name": "Slayer - South Of Heaven (1989)",
+      "price": "395",
+      "src": "\\upload\\South_of_heaven.jpg"
+    },
+    {
+      "name": "Northlane - Al1ien (2019)",
+      "price": "520",
+      "src": "\\upload\\Al1en.jpg"
+    },
+    {
+      "name": "Emarosa - Versus (2014)",
+      "price": "410",
+      "src": "\\upload\\Versus.jpg"
+    },
+    {
+      "name": "Five Finger Death Punch - The Way Of The Fist (2007)",
+      "price": "370",
+      "src": "\\upload\\The_way_of_the_fist.jpg"
+    },
+    {
+      "name": "Wildways - Нью Скул (2019)",
+      "price": "430",
+      "src": "\\upload\\New_scool.jpg"
+    },
+    {
+      "name": "Limp Bizkit - Chocolate Starfish And The Hot Dog Flavored Water (2000)",
+      "price": "99",
+      "src": "\\upload\\LB.jpg"
+    },
+    {
+      "name": "Papa Roach - Infest (2000)",
+      "price": "345",
+      "src": "\\upload\\Infest.jpg"
+    },
+    {
+      "name": "Polaris - The Death of Me (2020)",
+      "price": "545",
+      "src": "\\upload\\Polaris.jpg"
+    }
+  ]
+}

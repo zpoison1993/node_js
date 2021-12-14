@@ -137,9 +137,10 @@ async function reader(src) {
             // .catch(() => (throw new Error(`something went wrong while ${config.dist} directory creating`)))
     }
     if (!files.length) {
-        throw new Error(`No files in folder`)
+        console.log(`No files in folder`)
+        return
     }
-    files.forEach(async (file) => {
+    for (const file of files) {
         const currentPath = path.resolve(src, file)
         console.log(currentPath)
         const stats = await lstatAsync(currentPath)
@@ -149,7 +150,7 @@ async function reader(src) {
             await copyCurrentFile(currentPath, config.dist)
             console.log('currentPath', currentPath)
         }
-    })
+    }
 }
 
 (async () => {
